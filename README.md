@@ -53,13 +53,13 @@ The main idea of GBR is to optimization of arbitrary differentiable loss functio
 Here we list few figures we plotted:
 
 <p align="center">
-<img src="plots/visual/Medu_Fedu_barplot.png" width="400"><br>
+<img src="plots/visual/Medu_Fedu_barplot.png" width="600"><br>
 </p>
 
 > Above figure shows that people prefer to marry with similar education background person. This might because people with similar education may have more interests in common. And it also shows that the divorce rate is almost 50% high in each group. 
 
 <p align="center">
-<img src="plots/visual/goout_scatterplot.png" width="400"><br>
+<img src="plots/visual/goout_scatterplot.png" width="600"><br>
 </p>
 
 
@@ -68,7 +68,7 @@ Here we list few figures we plotted:
 
 
 <p align="center">
-<img src="plots/visual/comparisons_plot.png" width="500"><br>
+<img src="plots/visual/comparisons_plot.png" width="600"><br>
 </p>
 
 > Above plots show:
@@ -77,7 +77,7 @@ Here we list few figures we plotted:
 > * Mother's job is health related, their kids have best performance and Father's job is teacher related, their kids has best performance.
 
 <p align="center">
-<img src="plots/visual/traveltime_swarmplot.png" width="500"><br>
+<img src="plots/visual/traveltime_swarmplot.png" width="600"><br>
 </p>
 
 > From above figure we can see that the students who spent more time on the way to school have lower grades. And most of the students live near school and students who live in Rural are normally have more travel time than students live in Urban.
@@ -90,8 +90,8 @@ RMSE error: 0.9232826880063888
 R2 Score: 0.8948780406468524
 
 <p align="center">
-  <img src= "plots/ML/all_features_real_prediction.png" width="300" />
-  <img src= "plots/ML/all_features_deviance.png" width="300" /> 
+  <img src= "plots/ML/all_features_real_prediction.png" width="400" />
+  <img src= "plots/ML/all_features_deviance.png" width="400" /> 
 </p>
 
 If one previous score (G2) is removed, the accuracy of the model prediction will be reduced.  
@@ -102,8 +102,8 @@ RMSE error: 1.4917677853076017
 R2 Score: 0.7543110912228154
 
 <p align="center">
-  <img src= "plots/ML/Without_G2_real_prediction.png" width="300" />
-  <img src= "plots/ML/Without_G2_deviance.png" width="300" /> 
+  <img src= "plots/ML/Without_G2_real_prediction.png" width="400" />
+  <img src= "plots/ML/Without_G2_deviance.png" width="400" /> 
 </p>
 
 If both test scores (G1 and G2) are all removed, the prediction ability of the model will be greatly reduced, and it will not have the value of prediction.  
@@ -114,22 +114,22 @@ RMSE error: 2.582268612234751
 R2 Score: 0.27309841477549357
 
 <p align="center">
-  <img src= "plots/ML/Without_G1G2_real_prediction.png" width="300" />
-  <img src= "plots/ML/Without_G1G2_deviance.png" width="300" /> 
+  <img src= "plots/ML/Without_G1G2_real_prediction.png" width="400" />
+  <img src= "plots/ML/Without_G1G2_deviance.png" width="400" /> 
 </p>
 
 Regarding the classification task to predict if a student has a boyfriend or girlfriend. The output is:   
 
 Classification Report  
            
-           precision    recall  f1-score   support
+|              | precision | recall | f1-score | support |
+|:------------:|:---------:|:------:|:--------:|:-------:|
+|       0      |    0.81   |  0.86  |   0.83   |   201   |
+|       1      |    0.66   |  0.58  |   0.62   |    97   |
+|   accuracy   |           |        |   0.77   |   298   |
+|   macro avg  |    0.73   |  0.72  |   0.72   |   298   |
+| weighted avg |    0.76   |  0.77  |   0.76   |   298   |
 
-           0       0.81      0.86      0.83       201
-           1       0.66      0.58      0.62        97
-
-    accuracy                           0.77       298
-    macro avg       0.73      0.72      0.72       298
-    weighted avg       0.76      0.77      0.76       298
 
 Confusion Matrix 
 
