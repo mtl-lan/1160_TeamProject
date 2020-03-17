@@ -413,8 +413,6 @@ test_score = np.zeros((100,), dtype=np.float64)
 for i, y_pred in enumerate(clf.staged_predict(X_test)):
     test_score[i] = clf.loss_(y_test, y_pred)
 
-plt.figure(figsize=(12, 6))
-plt.subplot(1, 2, 1)
 plt.title('Deviance')
 plt.plot(np.arange(100) + 1, clf.train_score_, 'b-',
          label='Training Set Deviance')
@@ -525,8 +523,6 @@ test_score = np.zeros((100,), dtype=np.float64)
 for i, y_pred in enumerate(clf.staged_predict(X_test)):
     test_score[i] = clf.loss_(y_test, y_pred)
 
-plt.figure(figsize=(12, 6))
-plt.subplot(1, 2, 1)
 plt.title('Deviance')
 plt.plot(np.arange(100) + 1, clf.train_score_, 'b-',
          label='Training Set Deviance')
@@ -635,8 +631,6 @@ test_score = np.zeros((100,), dtype=np.float64)
 for i, y_pred in enumerate(clf.staged_predict(X_test)):
     test_score[i] = clf.loss_(y_test, y_pred)
 
-plt.figure(figsize=(12, 6))
-plt.subplot(1, 2, 1)
 plt.title('Deviance')
 plt.plot(np.arange(100) + 1, clf.train_score_, 'b-',
          label='Training Set Deviance')
@@ -747,8 +741,6 @@ test_score = np.zeros((100,), dtype=np.float64)
 for i, y_pred in enumerate(clf.staged_predict(X_test)):
     test_score[i] = clf.loss_(y_test, y_pred)
 
-plt.figure(figsize=(12, 6))
-plt.subplot(1, 2, 1)
 plt.title('Deviance')
 plt.plot(np.arange(100) + 1, clf.train_score_, 'b-',
          label='Training Set Deviance')
