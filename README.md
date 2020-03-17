@@ -52,13 +52,13 @@ The main idea of GBR is to optimization of arbitrary differentiable loss functio
 
 Here we list few figures we plotted:
 
-<p float="left">
+<p align="center">
 <img src="plots/visual/Medu_Fedu_barplot.png" width="400"><br>
 </p>
 
 > Above figure shows that people prefer to marry with similar education background person. This might because people with similar education may have more interests in common. And it also shows that the divorce rate is almost 50% high in each group. 
 
-<p float="left">
+<p align="center">
 <img src="plots/visual/goout_scatterplot.png" width="400"><br>
 </p>
 
@@ -67,7 +67,7 @@ Here we list few figures we plotted:
 > And all the groups the top grade students almost no alcohol consumption.
 
 
-<p float="left">
+<p align="center">
 <img src="plots/visual/comparisons_plot.png" width="500"><br>
 </p>
 
@@ -76,7 +76,7 @@ Here we list few figures we plotted:
 > * Male students have higher performance on Math and Female students have higher performance on Portuguese.
 > * Mother's job is health related, their kids have best performance and Father's job is teacher related, their kids has best performance.
 
-<p float="left">
+<p align="center">
 <img src="plots/visual/traveltime_swarmplot.png" width="500"><br>
 </p>
 
