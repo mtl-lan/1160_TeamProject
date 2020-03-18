@@ -867,5 +867,13 @@ print(classification_report(y_test, predicted_values))
 print('Confusion Matrix')
 print(confusion_matrix(y_test, predicted_values))
 
+# plot confusion matrix
+array = [[172, 29], [41, 56]]
+df_cm = pd.DataFrame(array, index=[i for i in "AB"], columns=[i for i in "AB"])
+plt.figure(figsize=(10, 7))
+sns.heatmap(df_cm, annot=True, fmt='g')
+plt.savefig(f'plots/ML/confusion_matrix.png')
+plt.close()
+
 # Although the accuracy of the model is not very high, it can somehow assist parents to prove their guess in a sense
 # as an auxiliary tool.
