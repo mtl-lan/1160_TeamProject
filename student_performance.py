@@ -79,6 +79,7 @@ students['nursery'] = students['nursery'].map({'no': 0, "yes": 1})
 students['higher'] = students['higher'].map({'no': 0, "yes": 1})
 students['internet'] = students['internet'].map({'no': 0, "yes": 1})
 students['romantic'] = students['romantic'].map({'no': 0, "yes": 1})
+
 # Recheck the dtypes
 print(students.info())
 
@@ -474,15 +475,6 @@ p2 = {'n_estimators': [100, 500],
       'max_features': [1.0]}
 job2 = 4
 
-
-def gradient_booster(param_grid, n_jobs):
-    estimator = GradientBoostingRegressor()
-    classifier = GridSearchCV(estimator=estimator, cv=5, param_grid=param_grid,
-                              n_jobs=n_jobs)
-    classifier.fit(X_train, y_train)
-    print(classifier.best_estimator_)
-
-
 gradient_booster(p2, job2)
 
 # train GBR with parameters optimized
@@ -582,15 +574,6 @@ p3 = {'n_estimators': [100, 500],
       'max_features': [1.0]}
 
 job3 = 4
-
-
-def gradient_booster(param_grid, n_jobs):
-    estimator = GradientBoostingRegressor()
-    classifier = GridSearchCV(estimator=estimator, cv=5, param_grid=param_grid,
-                              n_jobs=n_jobs)
-    classifier.fit(X_train, y_train)
-    print(classifier.best_estimator_)
-
 
 gradient_booster(p3, job3)
 
@@ -693,15 +676,6 @@ p4 = {'n_estimators': [100, 500],
       'max_features': [1.0]}
 
 job4 = 4
-
-
-def gradient_booster(param_grid, n_jobs):
-    estimator = GradientBoostingRegressor()
-    classifier = GridSearchCV(estimator=estimator, cv=5, param_grid=param_grid,
-                              n_jobs=n_jobs)
-    classifier.fit(X_train, y_train)
-    print(classifier.best_estimator_)
-
 
 gradient_booster(p4, job4)
 
@@ -835,15 +809,6 @@ p5 = {'n_estimators': [100, 500],
       'max_features': [1.0]}
 
 job5 = 4
-
-
-def gradient_booster(param_grid, n_jobs):
-    estimator = GradientBoostingClassifier()
-    classifier = GridSearchCV(estimator=estimator, cv=5, param_grid=param_grid,
-                              n_jobs=n_jobs)
-    classifier.fit(X_train, y_train)
-    print(classifier.best_estimator_)
-
 
 gradient_booster(p5, job5)
 
