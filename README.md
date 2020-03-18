@@ -69,7 +69,7 @@ Here we list few figures we plotted:
 
 
 <p align="center">
-<img src="plots/visual/comparisons_plot.png" width="600"><br>
+<img src="plots/visual/comparison.png" width="600"><br>
 </p>
 
 > Above plots show:
@@ -150,6 +150,8 @@ From the analysis of the different steps, we conclude:
 Suggest: Based on the above research analysis, we think that in data collection, it should consider the student's 'IQ', 'EQ', or 'communication ability', etc. These may be important factors that affect a student's academic performance. In the future, We hope to be able to make accurate predictions of students' academic performance when there is no grades related information. 
 
 ### References
-All of the links
+https://scikit-learn.org/stable/auto_examples/ensemble/plot_gradient_boosting_regression.html#sphx-glr-auto-examples-ensemble-plot-gradient-boosting-regression-py
+
+All the other links referenced were included in my discussion, above.
 
 -------
