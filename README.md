@@ -10,6 +10,7 @@
 ### Resources
 
 - Python script for your analysis: `student_performance.py`
+- Jupyter notebook script: `TeamProject_student_performance.ipynb`
 - Results figure/saved file: `plots/` 
 - Dockerfile for your experiment: `Dockerfile`
 - runtime-instructions in a file named RUNME.md
@@ -18,7 +19,7 @@
 
 ## Research Question
 
-By providing data attributes include student grades, demographic, social and school related features, can we predict a student's final academic performance?
+By providing data attributes including student grades, demographic, social and school related features, can we predict a student's final academic performance?
 
 ### Abstract 
 
@@ -34,7 +35,7 @@ The [dataset](https://archive.ics.uci.edu/ml/datasets/student+performance) we us
 
 * First of all, we merged both datasets into one dataset and added an extra column 'subject'. After plotting the correlation heatmap we got a general idea of our data and then through the visual analysis, we got some interesting findings (see Python code for details). 
 
-* Then we used [one-hot-encoding](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.get_dummies.html) method to convert data type from categorical type to numerical type before modeling the data. Because predicting students final grade is a regreesion task, so after estimators comparison by [cross-validation](https://scikit-learn.org/stable/modules/cross_validation.html) in scikit-learn, we chose Ensemble Decision Tree - `Gradient Boosting Regressor` which had the highest score in the comparison. 
+* Then we used [one-hot-encoding](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.get_dummies.html) method to convert data type from categorical type to numerical type before modeling the data. Because predicting students final grade is a regression task, so after estimators comparison by [cross-validation](https://scikit-learn.org/stable/modules/cross_validation.html) in scikit-learn, we chose Ensemble Decision Tree - `Gradient Boosting Regressor` which had the highest score in the comparison. 
 Gradient Boosting Regressor is an python built-in model in scikit-learn. The Pseudocode can be found [here](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html). 
 The main idea of GBR is to optimization of arbitrary differentiable loss functions and in each stage a regression tree is fit on the negative gradient of the given loss function.
 
@@ -133,8 +134,9 @@ Classification Report
 
 Confusion Matrix 
 
-    [[172  29]  
-      [ 41  56]]
+<p align="center">
+  <img src= "plots/ML/confusion_matrix.png" width="400" />
+</p>
 
 
 ### Discussion
@@ -142,10 +144,10 @@ Confusion Matrix
 From the analysis of the different steps, we conclude: 
 
 1. If we collect only students' previous grade (G1 and G2), we can build up a good prediction model to predict students' final grade. 
-2. The above conclusion doesn't mean this dataset has no research value. Because from the data visualization, we get a lot of interesting findings. Although these findings are not always to do with academic score, they still show the value of social research: the differences in learning between boys and girls can provide better educational ideas for parents and schools. Maybe boys need more exercise than just extending study time to improve performance. And for boys and girls in different subjects, can schools or families provide different help. For children who do not like to socialize, they can properly develop their social skills, which will help improve their academic performance, but parents and school need to supervise problems such as alcoholism caused by improper socialization, etc. 
+2. The above conclusion doesn't mean this data set has no research value. Because from the data visualization, we get a lot of interesting findings. Although these findings are not always to do with academic score, they still show the value of social research: the differences in learning between boys and girls can provide better educational ideas for parents and schools. Maybe boys need more exercise than just extending study time to improve performance. And for boys and girls in different subjects, can schools or families provide different help. For children who do not like to socialize, they can properly develop their social skills, which will help improve their academic performance, but parents and school need to supervise problems such as alcoholism caused by improper socialization, etc. 
 3. Predicting student next academic score with previous academic is definately the most effective and low-cost method. However, as a more in-depth study of the factors affecting a student's performance, this data did not find the most important features. 
 
-Suggest: Based on the above research analysis, we think that in data collection, it should consider the student's 'IQ', 'EQ', or 'comminication ability', etc. These may be important factors that affect a student's academic performance. In the future, We hope to be able to make accurate predictions of students' academic performance when there is no grades related information. 
+Suggest: Based on the above research analysis, we think that in data collection, it should consider the student's 'IQ', 'EQ', or 'communication ability', etc. These may be important factors that affect a student's academic performance. In the future, We hope to be able to make accurate predictions of students' academic performance when there is no grades related information. 
 
 ### References
 All of the links
