@@ -214,8 +214,9 @@ plt.close()
 # Scatter plot
 plt.style.use("bmh")
 fig, axes = plt.subplots(1, 1, figsize=(10, 10))
-axes.scatter(students['goout'], students['G3'], alpha=0.3, s=students[['Walc'] + ['Dalc']] ** 4,
-             label='alcohol consumption')
+s = (students['Walc'] + students['Dalc']) ** 3
+
+axes.scatter(students['goout'], students['G3'], alpha=0.3, s=s, label='alcohol consumption')
 axes.set_xlabel('Low <----going out with friends----> High')
 axes.set_ylabel('Grade')
 axes.set_title('Going out time on grade\n')
