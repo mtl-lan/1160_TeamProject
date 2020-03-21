@@ -305,16 +305,16 @@ in pandas to convert categorical data to numerical data.
 
 # use pd.concat to join the new columns with original students dataframe and drop the original 'Mjob' column
 students = pd.concat([students, pd.get_dummies(students['Mjob'],
-                                               prefix='Mjob', dummy_na=False)], axis=1).drop(['Mjob'], axis=1)
+                                               prefix='Mjob', drop_first=True)], axis=1).drop(['Mjob'], axis=1)
 # use pd.concat to join the new columns with students dataframe and drop the original 'Fjob' column
 students = pd.concat([students, pd.get_dummies(students['Fjob'],
-                                               prefix='Fjob', dummy_na=False)], axis=1).drop(['Fjob'], axis=1)
+                                               prefix='Fjob', drop_first=True)], axis=1).drop(['Fjob'], axis=1)
 # use pd.concat to join the new columns with students dataframe and drop the original 'reason' column
 students = pd.concat([students, pd.get_dummies(students['reason'],
-                                               prefix='reason', dummy_na=False)], axis=1).drop(['reason'], axis=1)
+                                               prefix='reason', drop_first=True)], axis=1).drop(['reason'], axis=1)
 # use pd.concat to join the new columns with students dataframe and drop the original 'guardian' column
 students = pd.concat([students, pd.get_dummies(students['guardian'],
-                                               prefix='guardian', dummy_na=False)], axis=1).drop(['guardian'], axis=1)
+                                               prefix='guardian', drop_first=True)], axis=1).drop(['guardian'], axis=1)
 # Check one-hot-encoding is applied correctly.
 print(students.columns)
 
