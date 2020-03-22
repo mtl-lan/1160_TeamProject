@@ -63,7 +63,7 @@ for col in dataTypeDict:
         text_columns.append(col)
 print(text_columns)
 
-# convert all the two-answers categorical features to integers: (Mjob, Fjob, reason, guardian, needs one-hot-encoding
+# convert all the binary categorical features to integers: (Mjob, Fjob, reason, guardian, needs one-hot-encoding
 # method to convert into numerical data)
 students['school'] = students['school'].map({'GP': 0, "MS": 1})
 students['subject'] = students['subject'].map({'math': 0, "por": 1})
@@ -226,7 +226,8 @@ plt.close()
 
 # From this plot we can see that the students who go out rarely has the minimal fluctuations in grades but not the
 # best grade group. The best group is going out on low level but still spend sometime with friends. And all the
-# groups the top grade students almost no alcohol consumption.
+# groups the top grade students almost no alcohol consumption or at a lower level. With the frequency of going out
+# creasing, the alcohol assumption is increasing too.
 
 # swarm plot
 sns.set()
@@ -299,8 +300,8 @@ plt.close()
 
 # Data cleansing
 """
-Since there are still 4 features dtype are objects, so we have to convert them to numerical data type. 
-Because there is no ordinal relationship for each features, so we have to use one-hot-encoding method 
+Since there are still 4 features data type are objects, so we have to convert them to numerical data type. 
+Because there is no ordinal relationship for each features, so we have to use dummy variables encoding method 
 in pandas to convert categorical data to numerical data. 
 """
 
@@ -350,7 +351,7 @@ for Model in [LinearRegression, LinearSVR, Ridge, ElasticNet, Lasso, GradientBoo
     model = Model()
     model.fit(X_train, y_train)
     predicted_values = model.predict(X_test)
-    print(f"{Model}: {Model.__name__, cross_val_score(Model(), X, y).mean()}")
+    print(f"{Model.__name__, cross_val_score(Model(), X, y).mean()}")
     print(f"MAE error(avg abs residual): {metrics.mean_absolute_error(y_test, predicted_values)}")
     print(f"MSE error: {metrics.mean_squared_error(y_test, predicted_values)}")
     print(f"RMSE error: {np.sqrt(metrics.mean_squared_error(y_test, predicted_values))}")
@@ -459,7 +460,7 @@ for Model in [LinearRegression, LinearSVR, Ridge, ElasticNet, Lasso, GradientBoo
     model = Model()
     model.fit(X_train, y_train)
     predicted_values = model.predict(X_test)
-    print(f"{Model}: {Model.__name__, cross_val_score(Model(), X, y).mean()}")
+    print(f"{Model.__name__, cross_val_score(Model(), X, y).mean()}")
     print(f"MAE error(avg abs residual): {metrics.mean_absolute_error(y_test, predicted_values)}")
     print(f"MSE error: {metrics.mean_squared_error(y_test, predicted_values)}")
     print(f"RMSE error: {np.sqrt(metrics.mean_squared_error(y_test, predicted_values))}")
@@ -560,7 +561,7 @@ for Model in [LinearRegression, LinearSVR, Ridge, ElasticNet, Lasso, GradientBoo
     model = Model()
     model.fit(X_train, y_train)
     predicted_values = model.predict(X_test)
-    print(f"{Model}: {Model.__name__, cross_val_score(Model(), X, y).mean()}")
+    print(f"{Model.__name__, cross_val_score(Model(), X, y).mean()}")
     print(f"MAE error(avg abs residual): {metrics.mean_absolute_error(y_test, predicted_values)}")
     print(f"MSE error: {metrics.mean_squared_error(y_test, predicted_values)}")
     print(f"RMSE error: {np.sqrt(metrics.mean_squared_error(y_test, predicted_values))}")
@@ -662,7 +663,7 @@ for Model in [LinearRegression, LinearSVR, Ridge, ElasticNet, Lasso, GradientBoo
     model = Model()
     model.fit(X_train, y_train)
     predicted_values = model.predict(X_test)
-    print(f"{Model}: {Model.__name__, cross_val_score(Model(), X, y).mean()}")
+    print(f"{Model.__name__, cross_val_score(Model(), X, y).mean()}")
     print(f"MAE error(avg abs residual): {metrics.mean_absolute_error(y_test, predicted_values)}")
     print(f"MSE error: {metrics.mean_squared_error(y_test, predicted_values)}")
     print(f"RMSE error: {np.sqrt(metrics.mean_squared_error(y_test, predicted_values))}")
@@ -796,7 +797,7 @@ for Model in [LogisticRegression, LinearSVC, neighbors.KNeighborsClassifier, SVC
     model.fit(X_train, y_train)
     predicted_values = model.predict(X_test)
     cv = ShuffleSplit(n_splits=5)
-    print(f"{Model}: {Model.__name__, cross_val_score(Model(), X, y, cv=cv)}")
+    print(f"{Model.__name__, cross_val_score(Model(), X, y, cv=cv)}")
     print('Classification Report')
     print(classification_report(y_test, predicted_values))
 

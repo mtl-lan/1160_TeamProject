@@ -35,11 +35,11 @@ The [dataset](https://archive.ics.uci.edu/ml/datasets/student+performance) we us
 
 * First of all, we merged both datasets into one dataset and added an extra column 'subject'. After plotting the correlation heatmap we got a general idea of our data and then through the visual analysis, we got some interesting findings (see Python code for details). 
 
-* Then we used [one-hot-encoding](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.get_dummies.html) method to convert data type from categorical type to numerical type before modeling the data. Because predicting students final grade is a regression task, so after estimators comparison by [cross-validation](https://scikit-learn.org/stable/modules/cross_validation.html) in scikit-learn, we chose Ensemble Decision Tree - `Gradient Boosting Regressor` which had the highest score in the comparison. 
+* Then we used [dummy encoding](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.get_dummies.html) method to convert data type from categorical type to numerical type before modeling the data. Because predicting students final grade is a regression task, so after estimators comparison by [cross-validation](https://scikit-learn.org/stable/modules/cross_validation.html) in scikit-learn, we chose Ensemble Decision Tree - *Gradient Boosting Regressor* which had the highest score in the comparison. 
 Gradient Boosting Regressor is an python built-in model in scikit-learn. The Pseudocode can be found [here](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html). 
 The main idea of GBR is to optimization of arbitrary differentiable loss functions and in each stage a regression tree is fit on the negative gradient of the given loss function.
 
-* By chosing GBR estimator, we then used grid search to tune the hyper-parameter which is in order to train a model with best performance. 
+* By choosing GBR estimator, we then used grid search to tune the hyper-parameter which is in order to train a model with best performance. 
 
 * We basicly trained model with 3 different features combination.
     1. Keep all the features.  
@@ -64,8 +64,8 @@ Here we list few figures we plotted:
 </p>
 
 
-> From above figure we can see that the students who go out rarely has the minimal fluctuations in grades but not the best grade group. The best group is going out on low level but still spend sometime with friends.
-> And all the groups the top grade students almost no alcohol consumption.
+> From this plot we can see that the students who go out rarely has the minimal fluctuations in grades but not the best grade group. The best group is going out on low level but still spend sometime with friends.
+> And all the groups the top grade students almost no alcohol consumption or at a lower level. With the frequency of going out creasing, the alcohol assumption is increasing too. 
 
 
 <p align="center">
